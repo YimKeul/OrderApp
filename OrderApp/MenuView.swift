@@ -15,11 +15,10 @@ struct MenuView: View {
                     Text("Salad Sandwich")
                         .font(.largeTitle)
                         .bold()
-                    Image(systemName: "wonsign")
+                    Image("saladsandwich")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 300, height: 200, alignment: .center)
-                        .background(.yellow)
                         .cornerRadius(15)
                     HStack{
                         Label("4000",systemImage: "wonsign")
@@ -31,11 +30,9 @@ struct MenuView: View {
                     .font(.caption)
                 }
                 .padding()
-                .background(.blue)
-                .cornerRadius(14)
-                .navigationTitle("MainWay")
-
+                .listRowBackground(Color.mint)
             }
+            .navigationTitle("MainWay")
         }
     }
 }
