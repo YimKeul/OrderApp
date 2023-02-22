@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8628924129A672780071BDCE /* Sandwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628924029A672780071BDCE /* Sandwich.swift */; };
 		862F44C629A47F37005ECE8A /* OrderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F44C529A47F37005ECE8A /* OrderAppApp.swift */; };
 		862F44C829A47F37005ECE8A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F44C729A47F37005ECE8A /* MenuView.swift */; };
 		862F44CA29A47F38005ECE8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862F44C929A47F38005ECE8A /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8628924029A672780071BDCE /* Sandwich.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sandwich.swift; path = OrderApp/Model/Sandwich.swift; sourceTree = SOURCE_ROOT; };
 		862F44C229A47F37005ECE8A /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		862F44C529A47F37005ECE8A /* OrderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppApp.swift; sourceTree = "<group>"; };
 		862F44C729A47F37005ECE8A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8628924229A673E50071BDCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8628924029A672780071BDCE /* Sandwich.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		862F44B929A47F37005ECE8A = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +61,7 @@
 		862F44C429A47F37005ECE8A /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				8628924229A673E50071BDCE /* Model */,
 				862F44C529A47F37005ECE8A /* OrderAppApp.swift */,
 				862F44C729A47F37005ECE8A /* MenuView.swift */,
 				862F44C929A47F38005ECE8A /* Assets.xcassets */,
@@ -139,6 +150,7 @@
 			files = (
 				862F44C829A47F37005ECE8A /* MenuView.swift in Sources */,
 				862F44C629A47F37005ECE8A /* OrderAppApp.swift in Sources */,
+				8628924129A672780071BDCE /* Sandwich.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

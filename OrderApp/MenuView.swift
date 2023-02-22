@@ -7,30 +7,36 @@
 
 import SwiftUI
 
+
+
+
 struct MenuView: View {
     var body: some View {
         NavigationStack{
             List{
-                VStack(alignment: .leading){
-                    Text("Salad Sandwich")
-                        .font(.largeTitle)
-                        .bold()
-                    Image("saladsandwich")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 300, height: 200, alignment: .center)
-                        .cornerRadius(15)
-                    HStack{
-                        Label("4000",systemImage: "wonsign")
-                            .labelStyle(.titleAndIcon)
-                        Spacer()
-                        Label("10", systemImage: "clock" )
-                            .labelStyle(.iconAndTitle)
+                ForEach(Sandwich.sampleData , id : \.self) { item in
+                    
+                    VStack(alignment: .leading){
+                        Text(item.name)
+                            .font(.largeTitle)
+                            .bold()
+                        Image(item.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 300, height: 200, alignment: .center)
+                            .cornerRadius(15)
+                        HStack{
+                            Label(item.price,systemImage: "wonsign")
+                                .labelStyle(.titleAndIcon)
+                            Spacer()
+                            Label(item.cookedTime, systemImage: "clock" )
+                                .labelStyle(.iconAndTitle)
+                        }
+                        .font(.caption)
                     }
-                    .font(.caption)
+                    .padding()
+                    .listRowBackground(item.menuColor)
                 }
-                .padding()
-                .listRowBackground(Color.mint)
             }
             .navigationTitle("MainWay")
         }
