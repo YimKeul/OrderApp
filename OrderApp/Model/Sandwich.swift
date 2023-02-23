@@ -22,4 +22,5 @@ extension Sandwich {
         Sandwich(name: "Mozza Sandwich", imageName: "mozzasandwich", price: "7000", cookedTime: "8", menuColor: .yellow)
     ]
     
+    static let singleSampleData = Sandwich(name: "Salad Sandwich", imageName: "saladsandwich", price: "4000", cookedTime: "10", menuColor: .mint)
 }

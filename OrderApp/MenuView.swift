@@ -16,7 +16,7 @@ struct MenuView: View {
             List{
                 ForEach(Sandwich.sampleData , id : \.self) { item in
                     NavigationLink {
-                        OrderView()
+                        OrderView(selectedSandwich: item)
                     } label: {
                         VStack(alignment: .leading){
                             Text(item.name)

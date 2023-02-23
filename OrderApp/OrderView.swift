@@ -9,26 +9,31 @@ import SwiftUI
 
 struct OrderView: View {
     
+    let selectedSandwich : Sandwich
+    
     @State var amount : Int = 0
+    @State var showAlert : Bool = false
+    
+    
     
     var body: some View {
-        VStack{
-            Text("Salad Sandwich")
+        VStack( alignment: .leading){
+            Text(selectedSandwich.name)
                 .font(.largeTitle)
-            Image("saladsandwich")
+            Image(selectedSandwich.imageName)
                 .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: 400)
+                .frame(maxWidth: .infinity, maxHeight:  400)
                 .cornerRadius(15)
+            
             HStack{
                 Text("소요시간 : ")
                 Spacer()
-                Text("10분")
+                Text(selectedSandwich.cookedTime)
             }
             HStack{
                 Text("가격 : ")
                 Spacer()
-                Text("3000원")
+                Text(selectedSandwich.price)
             }
             Stepper(value : $amount){
                 Text("수량 : \(amount)개")
@@ -36,19 +41,32 @@ struct OrderView: View {
             HStack{
                 Text("총 금액 : ")
                 Spacer()
-                Text("12,000원")
+                Text("\((Int(selectedSandwich.price) ?? 0)! * amount) 원")
+            
             }
             Button{
+                //
+                showAlert.toggle()
                 
             } label: {
                 Text("주문하기")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(.green)
+                    .cornerRadius(15)
+            }.alert("주문이 완료되었습니다!", isPresented: $showAlert) {
             }
-        }
+            
+        }.padding()
+        
+        
+        
+        
     }
 }
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView()
+        OrderView(selectedSandwich : Sandwich.singleSampleData)
     }
 }
