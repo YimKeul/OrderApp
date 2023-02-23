@@ -15,26 +15,29 @@ struct MenuView: View {
         NavigationStack{
             List{
                 ForEach(Sandwich.sampleData , id : \.self) { item in
-                    
-                    VStack(alignment: .leading){
-                        Text(item.name)
-                            .font(.largeTitle)
-                            .bold()
-                        Image(item.imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 300, height: 200, alignment: .center)
-                            .cornerRadius(15)
-                        HStack{
-                            Label(item.price,systemImage: "wonsign")
-                                .labelStyle(.titleAndIcon)
-                            Spacer()
-                            Label(item.cookedTime, systemImage: "clock" )
-                                .labelStyle(.iconAndTitle)
+                    NavigationLink {
+                        OrderView()
+                    } label: {
+                        VStack(alignment: .leading){
+                            Text(item.name)
+                                .font(.largeTitle)
+                                .bold()
+                            Image(item.imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 300, height: 200, alignment: .center)
+                                .cornerRadius(15)
+                            HStack{
+                                Label(item.price,systemImage: "wonsign")
+                                    .labelStyle(.titleAndIcon)
+                                Spacer()
+                                Label(item.cookedTime, systemImage: "clock" )
+                                    .labelStyle(.iconAndTitle)
+                            }
+                            .font(.caption)
                         }
-                        .font(.caption)
+                        .padding()
                     }
-                    .padding()
                     .listRowBackground(item.menuColor)
                 }
             }
