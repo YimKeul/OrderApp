@@ -22,6 +22,8 @@ struct OrderView: View {
                 .font(.largeTitle)
             Image(selectedSandwich.imageName)
                 .resizable()
+                .scaledToFill()
+                .frame(minWidth: 300)
                 .frame(maxWidth: .infinity, maxHeight:  400)
                 .cornerRadius(15)
             
@@ -47,16 +49,14 @@ struct OrderView: View {
             Button{
                 //
                 showAlert.toggle()
-                
+                orderData.append(OrderContent(name: selectedSandwich.name, totalPrice: String((Int(selectedSandwich.price) ?? 0)! * amount)))
             } label: {
                 Text("주문하기")
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
                     .background(.green)
                     .cornerRadius(15)
-            }.alert("주문이 완료되었습니다!", isPresented: $showAlert) {
-            }
-            
+            }.alert("주문이 완료되었습니다!", isPresented: $showAlert) {}
         }.padding()
         
         

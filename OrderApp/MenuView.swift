@@ -8,9 +8,13 @@
 import SwiftUI
 
 
+var orderData : [OrderContent] = []
 
 
 struct MenuView: View {
+    @State var showOrdered : Bool = false
+    @State var deleteList : Bool = false
+    
     var body: some View {
         NavigationStack{
             List{
@@ -42,7 +46,44 @@ struct MenuView: View {
                 }
             }
             .navigationTitle("MainWay")
+            .toolbar {
+                ToolbarItem{
+                    Button{
+                        showOrdered.toggle()
+                    } label: {
+                        Text("주문 확인")
+                    }
+                }
+            }.sheet(isPresented: $showOrdered){
+                List{
+                    if orderData.isEmpty {
+                        Text("주문한 내역이 없습니다.")
+                    }
+                    
+                    ForEach(orderData, id : \.self) { item in
+                        HStack{
+                            Text(item.name)
+                            Spacer()
+                            Label(item.totalPrice , systemImage: "wonsign")
+                        }
+                    }
+                    
+                    Button{
+                        deleteList.toggle()
+                        orderData = []
+                    }label : {
+                        HStack{
+                            Spacer()
+                            Text("지우기")
+                            Spacer()
+                        }
+                        
+                    }.alert("내용이 삭제되었습니다." , isPresented: $deleteList ){}
+                    
+                }
+            }
         }
+        
     }
 }
 
