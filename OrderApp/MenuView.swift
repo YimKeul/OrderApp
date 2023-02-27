@@ -81,6 +81,13 @@ struct MenuView: View {
                     }.alert("내용이 삭제되었습니다." , isPresented: $deleteList ){}
                     
                 }
+            }.onAppear{
+                SandwichBase.load{result in switch result {
+                case .success(let orderHistory):
+                    orderData = orderHistory
+                case .failure(let error):
+                    print("불러오기 실패" , error)
+                }}
             }
         }
         

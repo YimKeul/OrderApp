@@ -50,6 +50,14 @@ struct OrderView: View {
                 //
                 showAlert.toggle()
                 orderData.append(OrderContent(name: selectedSandwich.name, totalPrice: String((Int(selectedSandwich.price) ?? 0)! * amount)))
+                
+                SandwichBase.save(history: orderData) {
+                    result in switch result{
+                    case .success(let count) : print("success" , count)
+                    case .failure(let error) :
+                        print("fail", error)
+                    }
+                }
             } label: {
                 Text("주문하기")
                     .frame(maxWidth: .infinity)

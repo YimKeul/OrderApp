@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86124C7C29AC667D003F958B /* SandwichBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86124C7B29AC667D003F958B /* SandwichBase.swift */; };
 		8628924129A672780071BDCE /* Sandwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628924029A672780071BDCE /* Sandwich.swift */; };
 		862F44C629A47F37005ECE8A /* OrderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F44C529A47F37005ECE8A /* OrderAppApp.swift */; };
 		862F44C829A47F37005ECE8A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F44C729A47F37005ECE8A /* MenuView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86124C7B29AC667D003F958B /* SandwichBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichBase.swift; sourceTree = "<group>"; };
 		8628924029A672780071BDCE /* Sandwich.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sandwich.swift; path = OrderApp/Model/Sandwich.swift; sourceTree = SOURCE_ROOT; };
 		862F44C229A47F37005ECE8A /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		862F44C529A47F37005ECE8A /* OrderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppApp.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				8628924229A673E50071BDCE /* Model */,
 				862F44C529A47F37005ECE8A /* OrderAppApp.swift */,
 				862F44C729A47F37005ECE8A /* MenuView.swift */,
+				86124C7B29AC667D003F958B /* SandwichBase.swift */,
 				865AF52429A71ED300ED16E3 /* OrderView.swift */,
 				862F44C929A47F38005ECE8A /* Assets.xcassets */,
 				862F44CB29A47F38005ECE8A /* Preview Content */,
@@ -159,6 +162,7 @@
 				865AF52529A71ED300ED16E3 /* OrderView.swift in Sources */,
 				862F44C629A47F37005ECE8A /* OrderAppApp.swift in Sources */,
 				8628924129A672780071BDCE /* Sandwich.swift in Sources */,
+				86124C7C29AC667D003F958B /* SandwichBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

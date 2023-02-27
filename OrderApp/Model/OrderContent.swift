@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OrderContent : Hashable {
+struct OrderContent : Hashable , Encodable , Decodable {
     let name : String
     let totalPrice : String
     
